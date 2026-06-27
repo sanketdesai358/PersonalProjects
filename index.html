@@ -1,78 +1,346 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sanket Desai | Analytical Projects & Writing </title>
+  <title>Sanket Desai | Projects & Writing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { font-family: Georgia, serif; max-width: 850px; margin: 45px auto; padding: 0 22px; color: #222; line-height: 1.55; }
-    h1 { margin-bottom: 4px; }
-    .subtitle { color: #555; margin-top: 0; }
-    .project { border-top: 1px solid #ccc; padding: 22px 0; }
-    .project h2 { margin-bottom: 6px; font-size: 21px; }
-    .meta { color: #555; font-style: italic; margin-bottom: 8px; }
-    a { color: #00356b; font-weight: bold; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --paper: #d8c394;
+      --paper-dark: #b99f68;
+      --ink: #111111;
+      --muted: #3b3326;
+      --line: #111111;
+      --accent: #00356b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Courier New", monospace;
+      background:
+        radial-gradient(rgba(0,0,0,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.18), rgba(0,0,0,0.06)),
+        var(--paper);
+      background-size: 7px 7px, 100% 100%;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      border-bottom: 2px solid var(--line);
+      border-top: 2px solid var(--line);
+      background: rgba(216, 195, 148, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar div, .topbar a {
+      padding: 14px 18px;
+      border-right: 2px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .topbar a:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .hero {
+      min-height: 210px;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      align-items: center;
+      gap: 30px;
+      padding: 44px 42px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .mark {
+      width: 115px;
+      height: 115px;
+      border: 3px solid var(--line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 46px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.16);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 38px;
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .ticker {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      border-bottom: 2px solid var(--line);
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: bold;
+    }
+
+    .ticker div {
+      padding: 8px 18px;
+    }
+
+    .ticker .items {
+      display: flex;
+      gap: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .section-label {
+      padding: 9px 18px;
+      border-bottom: 2px solid var(--line);
+      font-weight: bold;
+      background: rgba(255,255,255,0.15);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 2px solid var(--line);
+    }
+
+    .card {
+      min-height: 270px;
+      padding: 24px 20px;
+      border-right: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+
+    .card:hover {
+      background: rgba(255,255,255,0.28);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      margin: 0 0 14px 0;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: 0.5px;
+    }
+
+    .card p {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .meta {
+      margin-top: 18px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: var(--muted);
+    }
+
+    .arrow {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      padding: 28px 20px 40px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar div, .topbar a {
+        border-bottom: 2px solid var(--line);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .hero {
+        padding: 32px 24px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<h1>Sanket Desai</h1>
-<p class="subtitle">Yale School of Management | Research & Analytics Portfolio</p>
+  <div class="topbar">
+    <div>Sanket Desai</div>
+    <a href="https://danketsesai.wordpress.com/" target="_blank">NBA Blog</a>
+    <a href="housing_market_dashboard.html">Dashboard</a>
+    <a href="https://github.com/sanketdesai358/PersonalProjects" target="_blank">GitHub</a>
+  </div>
 
-<p>Selected projects spanning sports analytics, monetary policy, housing markets, and financial crisis research.</p>
+  <section class="hero">
+    <div class="mark">SD</div>
+    <div>
+      <h1>Projects & Writing</h1>
+      <p class="subtitle">
+        Selected projects spanning sports analytics, monetary policy, housing markets,
+        machine learning, and financial crisis analysis.
+      </p>
+    </div>
+  </section>
 
-<div class="project">
-  <h2>Variance in Basketball: Optimizing Shot Selection</h2>
-  <p class="meta">Research project for Professors Tobias Moskowitz and Rudi Nils, Yale School of Management.</p>
-  <p>Statistical analysis examining the optimal quantity of 3-point shots in different "underdog" environments.</p>
-  <a href="Variance%20in%20Basketball%20-%20Analysis%20of%20Optimal%203-point%20Shooting.pdf">Download PDF</a>
-</div>
+  <div class="ticker">
+    <div>Latest:</div>
+    <div class="items">
+      <span>NBA Analytics</span>
+      <span>Fed Sentiment</span>
+      <span>Housing Markets</span>
+      <span>AIG Financial Products</span>
+      <span>Interactive Dashboard</span>
+    </div>
+  </div>
 
-<div class="project">
-  <h2>Federal Reserve Sentiment Model</h2>
-  <p class="meta">Research project.</p>
-  <p>Developed a BERT-based natural language processing model to quantify sentiment in speeches and press conferences by Jerome Powell. Harder to carry forward given Chair Warsh's new approach.</p>
-  <a href="Federal%20Reserve%20Sentiment%20Model.pdf">Download PDF</a>
-</div>
+  <div class="section-label">Selected Projects</div>
 
-<div class="project">
-  <h2>The Federal Reserve's Role in the post-COVID U.S. Housing Market</h2>
-  <p class="meta">Research project for Professor Bill English, Yale School of Management.</p>
-  <p>Examined how monetary policy, specifically QE, helped give rise to one of the largest housing boom periods in modern history post-COVID.</p>
-  <a href="Quantitative%20Easing%20and%20the%20U.S.%20Housing%20Market%20The%20Federal%20Reserve%E2%80%99s%20Transmission-2-21.pdf">Download PDF</a>
-</div>
+  <main class="grid">
 
-<div class="project">
-  <h2>AIG Financial Products and the Financial Crisis</h2>
-  <p class="meta">Research project for Jim Chanos, Yale School of Management.</p>
-  <p>Examined how AIG Financial Products and the firm amplified risk during the 2008 Global Financial Crisis.</p>
-  <a href="AIG%20Fraud%20Presentation%20-%20Sanket%20Desai.pdf">Download PDF</a>
-</div>
+    <a class="card" href="Variance%20in%20Basketball%20-%20Analysis%20of%20Optimal%203-point%20Shooting.pdf">
+      <div>
+        <h2>Variance in Basketball: Optimizing Shot Selection</h2>
+        <p>
+          Statistical analysis examining the optimal quantity of 3-point shots
+          in different underdog environments.
+        </p>
+      </div>
+      <div>
+        <div class="meta">Sports Analytics</div>
+        <div class="arrow">View Project →</div>
+      </div>
+    </a>
 
-<div class="project">
-  <h2>U.S. Housing Market Analytics Dashboard</h2>
+    <a class="card" href="Federal%20Reserve%20Sentiment%20Model.pdf">
+      <div>
+        <h2>Federal Reserve Sentiment Model</h2>
+        <p>
+          Developed a BERT-based natural language processing model to quantify
+          sentiment in speeches and press conferences by Jerome Powell.
+        </p>
+      </div>
+      <div>
+        <div class="meta">Machine Learning</div>
+        <div class="arrow">View Project →</div>
+      </div>
+    </a>
 
-  <p class="meta">Interactive dashboard</p>
+    <a class="card" href="Quantitative%20Easing%20and%20the%20U.S.%20Housing%20Market%20The%20Federal%20Reserve%E2%80%99s%20Transmission-2-21.pdf">
+      <div>
+        <h2>The Federal Reserve's Role in the Post-COVID U.S. Housing Market</h2>
+        <p>
+          Examined how monetary policy, specifically QE, helped give rise to one
+          of the largest housing boom periods in modern history.
+        </p>
+      </div>
+      <div>
+        <div class="meta">Macro & Housing</div>
+        <div class="arrow">View Project →</div>
+      </div>
+    </a>
 
-  <p>
-    Developed an interactive housing market dashboard integrating Zillow,
-    Redfin, Census, and Moody's Analytics data to analyze home prices,
-    affordability, inventory, rents, permits, and demographic trends across
-    U.S. metropolitan areas.
-  </p>
+    <a class="card" href="AIG%20Fraud%20Presentation%20-%20Sanket%20Desai.pdf">
+      <div>
+        <h2>AIG Financial Products and the Financial Crisis</h2>
+        <p>
+          Examined how AIG Financial Products amplified risk during the 2008
+          Global Financial Crisis.
+        </p>
+      </div>
+      <div>
+        <div class="meta">Financial Crisis</div>
+        <div class="arrow">View Project →</div>
+      </div>
+    </a>
 
-  <a href="housing_market_dashboard.html">Launch Dashboard →</a>
-</div>
+    <a class="card" href="housing_market_dashboard.html">
+      <div>
+        <h2>U.S. Housing Market Analytics Dashboard</h2>
+        <p>
+          Interactive dashboard integrating Zillow, Redfin, Census, and Moody's
+          Analytics data across U.S. metropolitan areas.
+        </p>
+      </div>
+      <div>
+        <div class="meta">Interactive Dashboard</div>
+        <div class="arrow">Launch Dashboard →</div>
+      </div>
+    </a>
 
-<h2>🏀 NBA Blog</h2>
+    <a class="card" href="https://danketsesai.wordpress.com/" target="_blank">
+      <div>
+        <h2>NBA Blog</h2>
+        <p>
+          My thoughts on the NBA through analytics and 25+ years of following
+          the game.
+        </p>
+      </div>
+      <div>
+        <div class="meta">Writing</div>
+        <div class="arrow">Visit Blog →</div>
+      </div>
+    </a>
 
-<p class="meta">
-My thoughts on the NBA through analytics and 25+ years of following the game.
-</p>
+  </main>
 
-<a href="https://danketsesai.wordpress.com/" target="_blank">
-Visit Blog →
-</a>
+  <div class="footer">
+    Built by Sanket Desai
+  </div>
 
 </body>
 </html>
