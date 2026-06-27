@@ -99,17 +99,42 @@
       background: var(--ink);
       color: var(--paper);
       font-weight: bold;
+      overflow: hidden;
     }
 
-    .ticker div {
+    .ticker-label {
+      padding: 8px 18px;
+      border-right: 2px solid var(--paper);
+      z-index: 2;
+      background: var(--ink);
+    }
+
+    .ticker-window {
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 44px;
+      width: max-content;
+      animation: ticker-left 28s linear infinite;
       padding: 8px 18px;
     }
 
-    .ticker .items {
-      display: flex;
-      gap: 38px;
-      overflow: hidden;
+    .ticker-track span {
       white-space: nowrap;
+    }
+
+    @keyframes ticker-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .section-label {
@@ -128,7 +153,7 @@
     }
 
     .card {
-      min-height: 270px;
+      min-height: 305px;
       padding: 24px 20px;
       border-right: 2px solid var(--line);
       border-bottom: 2px solid var(--line);
@@ -202,6 +227,10 @@
         border-bottom: 2px solid var(--line);
       }
 
+      .ticker {
+        grid-template-columns: 100px 1fr;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -238,13 +267,23 @@
   </section>
 
   <div class="ticker">
-    <div>Latest:</div>
-    <div class="items">
-      <span>NBA Analytics</span>
-      <span>Fed Sentiment</span>
-      <span>Housing Markets</span>
-      <span>AIG Financial Products</span>
-      <span>Interactive Dashboard</span>
+    <div class="ticker-label">Latest:</div>
+    <div class="ticker-window">
+      <div class="ticker-track">
+        <span>NBA Analytics</span>
+        <span>Fed Sentiment</span>
+        <span>Housing Markets</span>
+        <span>AIG Financial Products</span>
+        <span>Interactive Dashboard</span>
+        <span>NBA Blog</span>
+
+        <span>NBA Analytics</span>
+        <span>Fed Sentiment</span>
+        <span>Housing Markets</span>
+        <span>AIG Financial Products</span>
+        <span>Interactive Dashboard</span>
+        <span>NBA Blog</span>
+      </div>
     </div>
   </div>
 
@@ -256,8 +295,9 @@
       <div>
         <h2>Variance in Basketball: Optimizing Shot Selection</h2>
         <p>
-          Statistical analysis examining the optimal quantity of 3-point shots
-          in different underdog environments.
+          Research project for Professors Tobias Moskowitz and Rudi Nils, Yale School of Management.
+          Statistical analysis examining how underdog teams can use higher-variance shot selection,
+          especially three-point shooting, to improve upset probability in different game environments.
         </p>
       </div>
       <div>
@@ -270,8 +310,8 @@
       <div>
         <h2>Federal Reserve Sentiment Model</h2>
         <p>
-          Developed a BERT-based natural language processing model to quantify
-          sentiment in speeches and press conferences by Jerome Powell.
+          Developed a BERT-based natural language processing model to quantify sentiment
+          in speeches and press conferences by Jerome Powell.
         </p>
       </div>
       <div>
@@ -284,8 +324,10 @@
       <div>
         <h2>The Federal Reserve's Role in the Post-COVID U.S. Housing Market</h2>
         <p>
-          Examined how monetary policy, specifically QE, helped give rise to one
-          of the largest housing boom periods in modern history.
+          Research project for Professor Bill English, Yale School of Management.
+          Examined how quantitative easing and monetary policy transmission helped drive
+          the post-COVID housing boom through mortgage rates, affordability, home prices,
+          and residential investment.
         </p>
       </div>
       <div>
@@ -298,8 +340,9 @@
       <div>
         <h2>AIG Financial Products and the Financial Crisis</h2>
         <p>
-          Examined how AIG Financial Products amplified risk during the 2008
-          Global Financial Crisis.
+          Research project for Jim Chanos, Yale School of Management.
+          Analyzed how AIG Financial Products, credit default swap exposure,
+          and weak risk controls amplified systemic risk during the 2008 Global Financial Crisis.
         </p>
       </div>
       <div>
@@ -312,8 +355,8 @@
       <div>
         <h2>U.S. Housing Market Analytics Dashboard</h2>
         <p>
-          Interactive dashboard integrating Zillow, Redfin, Census, and Moody's
-          Analytics data across U.S. metropolitan areas.
+          Interactive dashboard integrating Zillow, Redfin, Census, and Moody's Analytics
+          data across U.S. metropolitan areas.
         </p>
       </div>
       <div>
@@ -326,8 +369,7 @@
       <div>
         <h2>NBA Blog</h2>
         <p>
-          My thoughts on the NBA through analytics and 25+ years of following
-          the game.
+          My thoughts on the NBA through analytics and 25+ years of following the game.
         </p>
       </div>
       <div>
