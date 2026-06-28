@@ -201,6 +201,26 @@
       text-transform: uppercase;
     }
 
+    .button-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card-link {
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
     .footer {
       padding: 28px 20px 40px;
       text-align: center;
@@ -351,19 +371,28 @@
       </div>
     </a>
 
-    <a class="card" href="housing_market_dashboard.html" target="_blank" rel="noopener noreferrer">
+    <div class="card">
       <div>
         <h2>U.S. Housing Market Analytics Dashboard</h2>
         <p>
-          Interactive dashboard integrating Zillow, Redfin, Census, and Moody's Analytics
-          data across U.S. metropolitan areas.
+          Interactive dashboard integrating Zillow, Redfin, Census, and Moody's
+          Analytics data across U.S. metropolitan areas. The browser version works
+          for the main dashboard; the neighborhood map is best viewed by downloading
+          and opening the full HTML file locally.
         </p>
       </div>
       <div>
         <div class="meta">Interactive Dashboard</div>
-        <div class="arrow">Launch Dashboard →</div>
+        <div class="button-row">
+          <a class="card-link" href="housing_market_dashboard.html" target="_blank" rel="noopener noreferrer">
+            Launch Dashboard →
+          </a>
+          <a class="card-link" href="https://github.com/sanketdesai358/PersonalProjects/raw/main/housing_market_dashboard.html" target="_blank" rel="noopener noreferrer">
+            Download Full Version →
+          </a>
+        </div>
       </div>
-    </a>
+    </div>
 
     <a class="card" href="https://danketsesai.wordpress.com/" target="_blank" rel="noopener noreferrer">
       <div>
