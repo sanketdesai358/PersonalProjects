@@ -1,6 +1,8 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Sanket Desai | Projects & Writing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,6 +18,10 @@
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -136,7 +142,7 @@
       display: flex;
       gap: 44px;
       width: max-content;
-      animation: ticker-left 32s linear infinite;
+      animation: ticker-left 38s linear infinite;
       padding: 8px 18px;
     }
 
@@ -148,18 +154,22 @@
       0% {
         transform: translateX(0);
       }
+
       100% {
         transform: translateX(-50%);
       }
     }
 
     .section-label {
-      padding: 9px 18px;
+      padding: 14px 18px;
       border-bottom: 2px solid var(--line);
+      border-top: 2px solid var(--line);
       font-weight: bold;
-      background: rgba(255,255,255,0.15);
+      font-size: 18px;
+      background: rgba(255,255,255,0.18);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      scroll-margin-top: 60px;
     }
 
     .grid {
@@ -215,16 +225,6 @@
       font-size: 14px;
       letter-spacing: 1px;
       text-transform: uppercase;
-    }
-
-    .download-note {
-      margin-top: 10px;
-      font-family: Georgia, serif;
-      font-size: 13px;
-      line-height: 1.35;
-      color: var(--muted);
-      text-transform: none;
-      letter-spacing: 0;
     }
 
     .footer {
@@ -303,227 +303,320 @@
 
   <div class="topbar">
     <div class="brand">Sanket Desai</div>
-    <a href="https://danketsesai.wordpress.com/" target="_blank" rel="noopener noreferrer">NBA Blog</a>
-    <a href="https://nyc-re-market.vercel.app/" target="_blank" rel="noopener noreferrer">NYC RE</a>
-    <a href="housing_market_dashboard.html?v=5" target="_blank" rel="noopener noreferrer">Housing</a>
-    <a href="https://sanketdesai358-svoe-app-esifax.streamlit.app/" target="_blank" rel="noopener noreferrer">SVOE</a>
-    <a href="https://3-2-1-draft-lottery-gcghqzcccwonk87xvmxlsu.streamlit.app/" target="_blank" rel="noopener noreferrer">3-2-1 Lottery</a>
+    <a href="#macro-markets">Macro</a>
+    <a href="#housing-markets">Housing</a>
+    <a href="#basketball-analytics">Basketball</a>
     <a href="https://github.com/sanketdesai358/PersonalProjects" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 
   <section class="hero">
     <div class="mark">SD</div>
+
     <div>
       <h1>Projects & Writing</h1>
+
       <p class="subtitle">
-        Selected projects spanning sports analytics, monetary policy, housing markets,
-        machine learning, and financial crisis analysis.
+        Selected projects spanning macroeconomic forecasting, fixed income,
+        housing markets, machine learning, and basketball analytics.
       </p>
     </div>
   </section>
 
   <div class="ticker">
     <div class="ticker-label">Latest:</div>
+
     <div class="ticker-window">
       <div class="ticker-track">
-        <span>NBA Analytics</span>
-        <span>Fed Sentiment</span>
-        <span>Housing Markets</span>
-        <span>NYC Real Estate</span>
-        <span>AIG Financial Products</span>
+        <span>CPI Prediction Model</span>
+        <span>Federal Reserve Sentiment</span>
         <span>MFA Book Value Model</span>
-        <span>Interactive Dashboard</span>
+        <span>U.S. Housing Markets</span>
+        <span>NYC Real Estate</span>
         <span>Shot Value Over Expected</span>
         <span>3-2-1 Draft Lottery</span>
         <span>Foul Thresholds</span>
         <span>NBA Blog</span>
 
-        <span>NBA Analytics</span>
-        <span>Fed Sentiment</span>
-        <span>Housing Markets</span>
-        <span>NYC Real Estate</span>
-        <span>AIG Financial Products</span>
+        <span>CPI Prediction Model</span>
+        <span>Federal Reserve Sentiment</span>
         <span>MFA Book Value Model</span>
-        <span>Interactive Dashboard</span>
+        <span>U.S. Housing Markets</span>
+        <span>NYC Real Estate</span>
         <span>Shot Value Over Expected</span>
         <span>3-2-1 Draft Lottery</span>
+        <span>Foul Thresholds</span>
         <span>NBA Blog</span>
       </div>
     </div>
   </div>
 
-  <div class="section-label">Selected Projects</div>
+  <!-- MACRO & MARKETS -->
+
+  <div class="section-label" id="macro-markets">
+    Macro &amp; Markets
+  </div>
 
   <main class="grid">
 
-    <a class="card" href="Variance%20in%20Basketball%20-%20Analysis%20of%20Optimal%203-point%20Shooting.pdf" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>Variance in Basketball: Optimizing Shot Selection</h2>
-        <p>
-          Research project for Professors Tobias Moskowitz and Rudi Nils, Yale School of Management.
-          Statistical analysis examining how underdog teams can use higher-variance shot selection,
-          especially three-point shooting, to improve upset probability in different game environments.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Sports Analytics</div>
-        <div class="arrow">View Project →</div>
-      </div>
-    </a>
-
-    <a class="card" href="Federal%20Reserve%20Sentiment%20Model.pdf" target="_blank" rel="noopener noreferrer">
+    <a class="card"
+       href="Federal%20Reserve%20Sentiment%20Model.pdf"
+       target="_blank"
+       rel="noopener noreferrer">
       <div>
         <h2>Federal Reserve Sentiment Model</h2>
+
         <p>
-          Developed a BERT-based natural language processing model to quantify sentiment
-          in speeches and press conferences by Jerome Powell.
+          Developed a BERT-based natural language processing model to quantify
+          sentiment in speeches and press conferences by Jerome Powell.
         </p>
       </div>
+
       <div>
-        <div class="meta">Machine Learning</div>
+        <div class="meta">Machine Learning &amp; Monetary Policy</div>
         <div class="arrow">View Project →</div>
       </div>
     </a>
 
-    <a class="card" href="Quantitative%20Easing%20and%20the%20U.S.%20Housing%20Market%20The%20Federal%20Reserve%E2%80%99s%20Transmission-2-21.pdf" target="_blank" rel="noopener noreferrer">
+    <a class="card"
+       href="https://cpi-prediction.vercel.app/challenger/timeline"
+       target="_blank"
+       rel="noopener noreferrer">
       <div>
-        <h2>The Federal Reserve's Role in the Post-COVID U.S. Housing Market</h2>
+        <h2>CPI Prediction Model</h2>
+
         <p>
-          Research project for Professor Bill English, Yale School of Management.
-          Examined how quantitative easing and monetary policy transmission helped drive
-          the post-COVID housing boom through mortgage rates, affordability, home prices,
+Propietary, bottoms-up m/m CPI forecasting tool modeling the 200+ components of CPI to get an informed opinion on the next print. 
+Used for betting on prediction markets, still in development phase. 
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Macroeconomic Forecasting</div>
+        <div class="arrow">Launch Model →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="https://mfabookvaluemodel.streamlit.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>MFA Book Value Model</h2>
+
+        <p>
+          Bottoms-up mortgage REIT valuation model estimating MFA Financial's
+          book value sensitivity across home prices, rate shocks, asset marks,
+          leverage, and portfolio assumptions.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Mortgage Credit Analytics</div>
+        <div class="arrow">Launch Model →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="AIG%20Fraud%20Presentation%20-%20Sanket%20Desai.pdf"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>AIG Financial Products and the Financial Crisis</h2>
+
+        <p>
+          Research project for Jim Chanos at the Yale School of Management.
+          Analyzed how credit default swap exposure and weak risk controls
+          amplified systemic risk during the 2008 Global Financial Crisis.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Financial Crisis Analysis</div>
+        <div class="arrow">View Project →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="Quantitative%20Easing%20and%20the%20U.S.%20Housing%20Market%20The%20Federal%20Reserve%E2%80%99s%20Transmission-2-21.pdf"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>The Federal Reserve's Role in the Post-COVID Housing Boom</h2>
+
+        <p>
+          Research project for Professor Bill English at the Yale School of
+          Management examining how quantitative easing and monetary policy
+          transmission affected mortgage rates, affordability, home prices,
           and residential investment.
         </p>
       </div>
+
       <div>
-        <div class="meta">Macro & Housing</div>
+        <div class="meta">Monetary Policy &amp; Housing</div>
         <div class="arrow">View Project →</div>
-      </div>
-    </a>
-
-    <a class="card" href="AIG%20Fraud%20Presentation%20-%20Sanket%20Desai.pdf" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>AIG Financial Products and the Financial Crisis</h2>
-        <p>
-          Research project for Jim Chanos, Yale School of Management.
-          Analyzed how AIG Financial Products, credit default swap exposure,
-          and weak risk controls amplified systemic risk during the 2008 Global Financial Crisis.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Financial Crisis</div>
-        <div class="arrow">View Project →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://mfabookvaluemodel.streamlit.app/" target="_blank" rel="noopener noreferrer">
-  <div>
-    <h2>MFA Book Value Model</h2>
-    <p>
-      Bottoms-up mortgage REIT valuation model estimating MFA Financial's
-      book value sensitivity across home prices, rate shocks, asset marks,
-      leverage, and portfolio assumptions. Built to translate fixed income and
-      mortgage credit inputs into REIT-level valuation outputs.
-    </p>
-  </div>
-  <div>
-    <div class="meta">Mortgage Credit Analytics</div>
-    <div class="arrow">Launch Dashboard →</div>
-  </div>
-</a>
-    
-    <a class="card" href="https://nyc-re-market.vercel.app/" target="_blank" rel="noopener noreferrer">
-  <div>
-    <h2>NYC Real Estate Transaction Dashboard</h2>
-    <p>
-      Real estate market dashboard built from New York City transaction
-      data. The app identifies market signals across neighborhoods, property
-      types, pricing trends, sales volume, and transaction activity.
-    </p>
-  </div>
-  <div>
-    <div class="meta">Real Estate Analytics</div>
-    <div class="arrow">Launch Dashboard →</div>
-  </div>
-</a>
-
-    <a class="card" href="housing_market_dashboard.html?v=5" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>U.S. Housing Market Analytics Dashboard</h2>
-        <p>
-          Dashboard integrating Zillow, Redfin, Census, and Moody's
-          Analytics data across U.S. metropolitan areas. The browser version works
-          for the main dashboard.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Interactive Dashboard</div>
-        <div class="arrow">Launch Dashboard →</div>
-        <div class="download-note">
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="https://sanketdesai358-svoe-app-esifax.streamlit.app/" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>Shot Value Over Expected Dashboard</h2>
-        <p>
-          Interactive NBA analytics dashboard estimating expected points on each shot
-          using location, shot type, game context, and an XGBoost model. Compares actual
-          points to expected points to identify shot-making above or below expectation.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Basketball Analytics</div>
-        <div class="arrow">Launch Dashboard →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://3-2-1-draft-lottery-gcghqzcccwonk87xvmxlsu.streamlit.app/" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>3-2-1 NBA Draft Lottery Dashboard</h2>
-        <p>
-          NBA draft lottery dashboard modeling the new 3-2-1 lottery
-          structure. The app compares team incentives, pick odds, and lottery outcomes
-          under last year's standings versus the previous system.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Basketball Analytics</div>
-        <div class="arrow">Launch Dashboard →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://foul-up-3.streamlit.app/" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>Simple Foul Thresholds Dashboard</h2>
-        <p>
-          End-game basketball model testing when intentional fouling creates
-          more win probability than playing straight defense. Uses Monte Carlo simulation
-          to compare late-game possession paths across score, clock, free throws, rebounds,
-          and inbound-pressure scenarios.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Basketball Analytics</div>
-        <div class="arrow">Launch Dashboard →</div>
-      </div>
-    </a>
-
-    <a class="card" href="https://danketsesai.wordpress.com/" target="_blank" rel="noopener noreferrer">
-      <div>
-        <h2>NBA Blog</h2>
-        <p>
-          My thoughts on the NBA through analytics and 25+ years of following the game.
-        </p>
-      </div>
-      <div>
-        <div class="meta">Writing</div>
-        <div class="arrow">Visit Blog →</div>
       </div>
     </a>
 
   </main>
+
+  <!-- HOUSING MARKETS -->
+
+  <div class="section-label" id="housing-markets">
+    Housing Markets
+  </div>
+
+  <section class="grid">
+
+    <a class="card"
+       href="housing_market_dashboard.html?v=5"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>U.S. Housing Market Analytics Dashboard</h2>
+
+        <p>
+          Dashboard integrating Zillow, Redfin, Census, and Moody's Analytics
+          data to compare home prices, rents, affordability, inventory,
+          construction, and demographic trends across U.S. metropolitan areas.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Housing Market Analytics</div>
+        <div class="arrow">Launch Dashboard →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="https://nyc-re-market.vercel.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>NYC Real Estate Transaction Dashboard</h2>
+
+        <p>
+          Real estate market dashboard built from New York City transaction
+          data to identify leading signals across neighborhoods, property types,
+          pricing trends, sales volume, and transaction activity.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Real Estate Analytics</div>
+        <div class="arrow">Launch Dashboard →</div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- BASKETBALL ANALYTICS -->
+
+  <div class="section-label" id="basketball-analytics">
+    Basketball Analytics
+  </div>
+
+  <section class="grid">
+
+    <a class="card"
+       href="Variance%20in%20Basketball%20-%20Analysis%20of%20Optimal%203-point%20Shooting.pdf"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>Variance in Basketball: Optimizing Shot Selection</h2>
+
+        <p>
+          Research project for Professors Tobias Moskowitz and Rudi Nils at the
+          Yale School of Management examining how underdog teams can use
+          higher-variance shot selection to improve upset probability.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Basketball Strategy</div>
+        <div class="arrow">View Project →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="https://sanketdesai358-svoe-app-esifax.streamlit.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>Shot Value Over Expected Dashboard</h2>
+
+        <p>
+          NBA analytics dashboard estimating expected points on each shot using
+          location, shot type, game context, and an XGBoost model, then comparing
+          actual production with expected production.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Shot Quality &amp; Machine Learning</div>
+        <div class="arrow">Launch Dashboard →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="https://3-2-1-draft-lottery-gcghqzcccwonk87xvmxlsu.streamlit.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>3-2-1 NBA Draft Lottery Dashboard</h2>
+
+        <p>
+          NBA draft lottery dashboard modeling a 3-2-1 lottery structure and
+          comparing team incentives, pick probabilities, and lottery outcomes
+          with the existing system.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">League Policy &amp; Incentives</div>
+        <div class="arrow">Launch Dashboard →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="https://foul-up-3.streamlit.app/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>Simple Foul Thresholds Dashboard</h2>
+
+        <p>
+          End-game decision model using Monte Carlo simulation to test when
+          intentional fouling creates more win probability than playing straight
+          defense across different score, clock, and possession scenarios.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Late-Game Strategy</div>
+        <div class="arrow">Launch Dashboard →</div>
+      </div>
+    </a>
+
+    <a class="card"
+       href="https://danketsesai.wordpress.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div>
+        <h2>NBA Blog</h2>
+
+        <p>
+          My thoughts on the NBA through analytics and more than 25 years of
+          following the game.
+        </p>
+      </div>
+
+      <div>
+        <div class="meta">Basketball Writing</div>
+        <div class="arrow">Visit Blog →</div>
+      </div>
+    </a>
+
+  </section>
 
   <div class="footer">
     Built by Sanket Desai
@@ -531,3 +624,4 @@
 
 </body>
 </html>
+```
